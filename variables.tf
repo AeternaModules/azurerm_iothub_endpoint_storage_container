@@ -23,14 +23,14 @@ EOT
     iothub_id                  = string
     name                       = string
     resource_group_name        = string
-    authentication_type        = optional(string, "keyBased")
-    batch_frequency_in_seconds = optional(number, 300)
+    authentication_type        = optional(string) # Default: "keyBased"
+    batch_frequency_in_seconds = optional(number) # Default: 300
     connection_string          = optional(string)
-    encoding                   = optional(string, "Avro")
+    encoding                   = optional(string) # Default: "Avro"
     endpoint_uri               = optional(string)
-    file_name_format           = optional(string, "{iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}")
+    file_name_format           = optional(string) # Default: "{iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}"
     identity_id                = optional(string)
-    max_chunk_size_in_bytes    = optional(number, 314572800)
+    max_chunk_size_in_bytes    = optional(number) # Default: 314572800
     subscription_id            = optional(string)
   }))
 }
