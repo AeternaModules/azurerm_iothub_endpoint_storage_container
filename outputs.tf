@@ -1,3 +1,7 @@
+output "iothub_endpoint_storage_containers_id" {
+  description = "Map of id values across all iothub_endpoint_storage_containers, keyed the same as var.iothub_endpoint_storage_containers"
+  value       = { for k, v in azurerm_iothub_endpoint_storage_container.iothub_endpoint_storage_containers : k => v.id }
+}
 output "iothub_endpoint_storage_containers_authentication_type" {
   description = "Map of authentication_type values across all iothub_endpoint_storage_containers, keyed the same as var.iothub_endpoint_storage_containers"
   value       = { for k, v in azurerm_iothub_endpoint_storage_container.iothub_endpoint_storage_containers : k => v.authentication_type }
